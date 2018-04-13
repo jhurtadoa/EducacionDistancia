@@ -7,6 +7,9 @@ import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/comun/dashboard/dashboard.component';
 import { AsignaturaListadoComponent } from './components/asignatura/asignatura-listado/asignatura-listado.component';
 import { AsignaturaDetalleComponent } from './components/asignatura/asignatura-detalle/asignatura-detalle.component';
+import { MomentoIndividualComponent } from './components/momentos-educacion/momento-individual/momento-individual.component';
+import { MomentoGrupalComponent } from './components/momentos-educacion/momento-grupal/momento-grupal.component';
+import { MomentoTutorialComponent } from './components/momentos-educacion/momento-tutorial/momento-tutorial.component';
 
 
 const routes: Routes = [
@@ -23,7 +26,10 @@ const routes: Routes = [
     children: [
       { path: 'dashboard', component: DashboardComponent},
       { path: 'asignaturas', component: AsignaturaListadoComponent },
-      { path: 'asignatura/:id', component: AsignaturaDetalleComponent }
+      { path: 'asignatura/:id', component: AsignaturaDetalleComponent },
+      { path: 'momentoindividual', component: MomentoIndividualComponent },
+      { path: 'momentogrupal', component: MomentoGrupalComponent },
+      { path: 'momentotutorial', component: MomentoTutorialComponent },
       
     ]
   }
