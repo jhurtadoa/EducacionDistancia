@@ -1,5 +1,14 @@
-<ul class="nav nav-tabs">
-  <li *ngFor = "let opcion of Opciones" class="nav-item">
-    <a class="nav-link active" href="#"> {{opcion}} </a>
-  </li>  
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li *ngFor="let opcion of Opciones" class="nav-item">
+        <a class="nav-link" id="{{opcion.split('|')[1]}}-tab" data-toggle="tab" href="#home" role="tab" [attr.aria-controls]="opcion.split('|')[1]" aria-selected="true" (click)="funcion(opcion.split('|')[1])"> 
+          {{ opcion.split('|')[0] }}
+        </a>
+    </li>
 </ul>
+
+<div Id="div" class="tab-content">
+    <div Id="div1" *ngFor="let contenido of contenidos" class="tab-pane active" id="Tabs" role="tabpanel">
+        {{ contenido }}
+    </div>
+
+</div>
