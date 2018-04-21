@@ -1,10 +1,19 @@
 <h2>Listado de asignaturas</h2>
-<app-asignatura-resumen asignaturaId="1" asignatura="Calculo diferencial" numeroTareasPendientes="3" numeroNotificaciones="5"></app-asignatura-resumen>
 
-<app-asignatura-resumen asignaturaId="2" asignatura="Programación basica" numeroTareasPendientes="2" numeroNotificaciones="4"></app-asignatura-resumen>
+<nav class="navbar navbar-light bg-light">
+    <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search" (keyup.enter)="buscar(buscarTexto.value)" #buscarTexto>
+        <button (click)="buscar(buscarTexto.value)" class="btn btn-outline-success my-2 my-sm-0" type="button">Buscar</button>
+    </form>
+</nav>
 
-<app-asignatura-resumen asignaturaId="3" asignatura="Fisica I" numeroTareasPendientes="2" numeroNotificaciones="3"></app-asignatura-resumen>
+<app-asignatura-resumen *ngFor="let asignatura of asignaturas" [asignaturaId]=asignatura.id [asignatura]=asignatura.nombre [numeroTareasPendientes]=asignatura.resumen.tareas_pendientes [numeroNotificaciones]=asignatura.resumen.notificaciones></app-asignatura-resumen>
 
-<app-asignatura-resumen asignaturaId="4" asignatura="Quimica basica" numeroTareasPendientes="1" numeroNotificaciones="3"></app-asignatura-resumen>
+<div class="row" *ngIf="asignaturas.length == 0">
+    <div class="col-md-12">
+        <div class="alert alert-info" role="alert">
+            no existen asignaturas.
+        </div>
 
-<app-asignatura-resumen asignaturaId="5" asignatura="Comunicación I" numeroTareasPendientes="0" numeroNotificaciones="1"></app-asignatura-resumen>
+    </div>
+</div>
