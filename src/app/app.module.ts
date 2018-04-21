@@ -22,6 +22,8 @@ import { MomentoTutorialComponent } from './components/momentos-educacion/moment
 import { SidebarComponent } from './components/comun/sidebar/sidebar.component';
 import { SiteLayoutComponent } from './components/comun/layout/site-layout/site-layout.component';
 import { AppLayoutComponent } from './components/comun/layout/app-layout/app-layout.component';
+import { TabsComponent } from './components/comun/control/tabs/tabs.component';
+import { TableComponent } from './components/comun/control/table/table.component';
 
 
 @NgModule({
@@ -44,7 +46,9 @@ import { AppLayoutComponent } from './components/comun/layout/app-layout/app-lay
     MomentoTutorialComponent,
     SidebarComponent,
     SiteLayoutComponent,
-    AppLayoutComponent
+    AppLayoutComponent,
+    TabsComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,

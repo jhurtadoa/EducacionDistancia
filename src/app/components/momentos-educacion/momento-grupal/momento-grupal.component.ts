@@ -5,8 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './momento-grupal.component.html',
   styleUrls: ['./momento-grupal.component.css']
 })
-export class MomentoGrupalComponent implements OnInit {
-
+export class MomentoGrupalComponent implements OnInit {  
   constructor() { }
 
   ngOnInit() {
