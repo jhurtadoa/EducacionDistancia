@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -24,7 +25,8 @@ import { SiteLayoutComponent } from './components/comun/layout/site-layout/site-
 import { AppLayoutComponent } from './components/comun/layout/app-layout/app-layout.component';
 import { TabsComponent } from './components/comun/control/tabs/tabs.component';
 import { TableComponent } from './components/comun/control/table/table.component';
-
+import { PdfComponent } from './components/comun/pdf/pdf.component';
+import { VideochatComponent } from './components/comun/videochat/videochat.component';
 
 @NgModule({
   declarations: [
@@ -48,10 +50,13 @@ import { TableComponent } from './components/comun/control/table/table.component
     SiteLayoutComponent,
     AppLayoutComponent,
     TabsComponent,
-    TableComponent
+    TableComponent,
+    PdfComponent,
+    VideochatComponent
   ],
   imports: [
     BrowserModule,
+    PdfViewerModule,
     FormsModule,
     AppRoutingModule
   ],
