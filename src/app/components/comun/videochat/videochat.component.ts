@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { debugOutputAstAsTypeScript } from '@angular/compiler';
 
 @Component({
@@ -8,28 +8,27 @@ import { debugOutputAstAsTypeScript } from '@angular/compiler';
 })
 export class VideochatComponent implements OnInit {
   
+  @Input() peer: any;
+
   @ViewChild('myvideo') myVideo: any;
   @ViewChild('otrousuario') otrousuario: any;
 
-  peer;
   anotherid;
-  mypeerid;  
+  mypeerid;
   constructor() { }
 
   ngOnInit() {
-    let video = this.myVideo.nativeElement;
-    let videootrousuario = this.otrousuario.nativeElement;
-    //this.peer = new Peer({key: 'lwjd5qra8257b9'}); 
-    this.peer = new Peer(null, {
-      debug: 2
-    });
+  
     setTimeout(() => {
       this.mypeerid = this.peer.id;
     }, 3000);
+    let video = this.myVideo.nativeElement;
+    let videootrousuario = this.otrousuario.nativeElement;
+    //this.peer = new Peer({key: 'lwjd5qra8257b9'});     
 
     this.peer.on('connection', function(conn) {
       conn.on('data', function(data){
-        debugger;
+        //debugger;
         console.log(data);
       });
     });
@@ -39,7 +38,7 @@ export class VideochatComponent implements OnInit {
     n.getUserMedia =  ( n.getUserMedia || n.webkitGetUserMedia || n.mozGetUserMedia || n.msGetUserMedia );
     
     this.peer.on('call', function(call) {
-      
+      debugger;
       n.getUserMedia({video: true, audio: true}, function(stream) {
         call.answer(stream);
         videootrousuario.src =URL.createObjectURL(stream);
@@ -56,10 +55,12 @@ export class VideochatComponent implements OnInit {
 
   connect(){
     var conn = this.peer.connect(this.anotherid);
-      conn.on('open', function(){
-        conn.send('Message from that id');
-      }
-    );
+    debugger;
+    let msg: string;
+    msg = "</br> Se envio desde aqui";
+    conn.on('open', function(){
+      conn.send(msg);
+    });
   }
   
   videoconnect(){

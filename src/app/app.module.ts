@@ -26,7 +26,6 @@ import { SiteLayoutComponent } from './components/comun/layout/site-layout/site-
 import { AppLayoutComponent } from './components/comun/layout/app-layout/app-layout.component';
 import { TabsComponent } from './components/comun/control/tabs/tabs.component';
 import { TableComponent } from './components/comun/control/table/table.component';
-<<<<<<< HEAD
 
 //Modules
 import { HttpClientModule } from "@angular/common/http";
@@ -39,10 +38,8 @@ import { BlogComponent } from './components/comun/control/blog/blog.component';
 import { UploaderComponent } from './components/comun/control/uploader/uploader.component';
 import { UploaderService } from './services/uploader.service';
 
-=======
 import { PdfComponent } from './components/comun/pdf/pdf.component';
 import { VideochatComponent } from './components/comun/videochat/videochat.component';
->>>>>>> 0a99c9a2e5e89f2b76f8fdd6154e0fa367b45ad2
 
 @NgModule({
   declarations: [
@@ -67,15 +64,11 @@ import { VideochatComponent } from './components/comun/videochat/videochat.compo
     AppLayoutComponent,
     TabsComponent,
     TableComponent,
-<<<<<<< HEAD
     TemaResumenComponent,
     BlogComponent,
-    UploaderComponent
-    
-=======
+    UploaderComponent,
     PdfComponent,
     VideochatComponent
->>>>>>> 0a99c9a2e5e89f2b76f8fdd6154e0fa367b45ad2
   ],
   imports: [
     BrowserModule,
