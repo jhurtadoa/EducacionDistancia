@@ -1,0 +1,164 @@
+:host{
+    border:1px solid #ccc !important;
+     height: 420px;
+     width: 100%;
+     background-color: #c6f1c8;
+     display: inline-block;
+     padding: 5px;
+     overflow: hidden !important;
+     position: relative;
+}
+
+.blog-container h5{
+    text-align: center;
+    margin: 3px 5px 8px 5px;
+}
+
+.new-post{
+    display: inline-block !important;
+    width: 100% !important;
+}
+
+.btn-new-post{
+    display: inline-block !important;
+    width: 100% !important;
+    background-color: #66BB6A;
+    border-color: #A5D6A7;
+}
+
+.btn-group-new-post{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 4px;
+    resize: none !important;
+    width: 97%;
+}
+
+.list-posts{
+    background-color: #fff;
+    display: block;
+    height: 280px !important;
+    padding: 1px;
+    overflow-y:auto;
+    border-radius: 3px;
+}
+
+
+.item-post {
+    border: 1px solid #ccc;
+    background-color: antiquewhite;
+    height: 25px !important;
+    display: table;
+    width: calc(100% - 10px);
+    margin: 5px auto 5px auto;
+    border-radius: 5px;
+    cursor:pointer;
+    padding: 5px 13px;
+    position: relative;
+    top:0;
+    transition: 0.05s all;
+}
+
+.item-post:hover {
+    top:-3px;
+    box-shadow: 0px 3px 5px #ddd;
+}
+
+.item-description-post{
+    border: 1px solid #bbb;
+    display: block;
+    padding: 10px;
+    box-shadow: 0px 1px 3px #ccc;
+    background-color: #fff;
+}
+
+.item-post p {
+    display: block;
+    margin-right: 25px;
+    padding-top: 5px;
+}
+
+.item-post span sub{
+    position: relative;
+    margin-bottom: 5px;
+    color:gold;
+    float: right;
+    top: 28px;
+    left: 12px;
+}
+
+
+.item-post span span {
+    float: right;
+    display: block;
+    color: gold;
+    font-size: 1.5em;
+    transition: 0.1s all;
+    margin-right: -5px;
+    margin-top: 3px;
+}
+
+.item-post span span:hover{
+    transform: scale(1.5,1.5);
+    text-shadow: 0px 0px 10px rgb(253, 231, 104);
+}
+
+.item-post .btn-eliminar {
+    float: right;
+    margin-left: 10px;
+    margin-top: 8px;
+    color: #aaa;
+    transition: 0.1s all;
+}
+
+.item-post .btn-eliminar:hover{
+    color:red;
+    transform: scale(1.5,1.5);
+    text-shadow: 0px 0px 10px white;
+}
+
+.box-answer-post{
+    margin-top:10px;
+    padding-top: 0px;
+}
+
+.btn-new-answer-post{
+    margin-top:3px;
+    float: right;
+}
+
+.list-answers-post{
+    list-style: none;
+}
+
+.item-answer-post{
+    border: 1px solid #ddd;
+    padding: 5px;
+    background-color: #fdfdfd;
+    margin-bottom: 5px;
+    box-shadow: 0px 1px 3px #ccc;
+}
+
+.footer-answer-post{
+    display: block;
+    width: 100%;
+}
+
+::-webkit-scrollbar {
+    width: .5em;
+    
+    background-color: rgb(228, 228, 228);
+    outline: 1px solid rgb(222, 228, 233);
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 5px;
+}
+ 
+::-webkit-scrollbar-thumb {
+    background-color: #81c784;
+    outline: 1px solid slategrey;
+    border-radius: 5px;
+  }

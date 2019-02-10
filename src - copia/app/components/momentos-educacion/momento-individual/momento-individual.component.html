@@ -1,0 +1,35 @@
+<h2 *ngIf="course">Protocolo individual - {{ course.fullname }}</h2>
+<div class="row">
+    <div class="col-3">
+        <div class="topics-list">
+            <h3>Listado de temas</h3>
+            <ul class="list-group">
+                <a *ngFor="let topic of topics" [routerLink]="['/asignatura/'+course.id+'/protocolo/individual/'+topic.id]"  class="list-group-item" [ngClass]="{'active': topic.id == topicSelected.id}">
+                    {{ topic.name }}
+                </a>
+            </ul>
+        </div>        
+    </div>
+
+    <div class="col-5">
+            <h3>Recursos del tema</h3>
+            <div *ngIf="topicSelected.modules" class="group-resources">
+                <h6>Recursos</h6>
+                <ul class="group-resources-items">
+                    <li *ngFor="let module of topicSelected.modules">
+                    <a [href]="module.url" target="_blank"><span><img class="img-module" [src]="module.modicon" alt="module.modname"></span>{{ module.name }}</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <app-uploader [prefijo]="'course'+idcourse"></app-uploader>
+    </div>
+    <div class="col-4">
+        <app-blog *ngIf="topicSelected.id" [type]="'inquietudes'" [context]="'individual'"></app-blog>
+    </div>
+
+</div>
+
+<!-- <div class="container">
+    <app-tabs [Opciones]="['Mis Archivos | file', 'Inquietudes | inqui', 'Apuntes | notes']"></app-tabs>
+</div> -->
