@@ -12,6 +12,7 @@ import { AsignaturaListadoComponent } from './components/asignatura/asignatura-l
 import { AsignaturaResumenComponent } from './components/asignatura/asignatura-resumen/asignatura-resumen.component';
 import { AsignaturaDetalleComponent } from './components/asignatura/asignatura-detalle/asignatura-detalle.component';
 import { TemaListadoComponent } from './components/tema/tema-listado/tema-listado.component';
+import { TemaResumenComponent } from './components/tema/tema-resumen/tema-resumen.component';
 import { TemaActividadComponent } from './components/tema/tema-actividad/tema-actividad.component';
 import { TemaMaterialComponent } from './components/tema/tema-material/tema-material.component';
 import { TemaActividadConfigComponent } from './components/tema/tema-actividad-config/tema-actividad-config.component';
@@ -24,6 +25,17 @@ import { SiteLayoutComponent } from './components/comun/layout/site-layout/site-
 import { AppLayoutComponent } from './components/comun/layout/app-layout/app-layout.component';
 import { TabsComponent } from './components/comun/control/tabs/tabs.component';
 import { TableComponent } from './components/comun/control/table/table.component';
+
+//Modules
+import { HttpClientModule } from "@angular/common/http";
+
+//Services
+import { HttpClient } from "@angular/common/http";
+import { MoodleService } from './services/moodle.service';
+import { AnnotationsService } from './services/annotations.service'
+import { BlogComponent } from './components/comun/control/blog/blog.component';
+import { UploaderComponent } from './components/comun/control/uploader/uploader.component';
+import { UploaderService } from './services/uploader.service';
 
 
 @NgModule({
@@ -48,14 +60,19 @@ import { TableComponent } from './components/comun/control/table/table.component
     SiteLayoutComponent,
     AppLayoutComponent,
     TabsComponent,
-    TableComponent
+    TableComponent,
+    TemaResumenComponent,
+    BlogComponent,
+    UploaderComponent
+    
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [MoodleService, AnnotationsService, UploaderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

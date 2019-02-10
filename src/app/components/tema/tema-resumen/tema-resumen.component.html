@@ -1,0 +1,27 @@
+<div class="card">
+  <div class="card-header">
+    <h4 class="card-title">{{ topic.name }}</h4>
+  </div>
+  <div class="card-body">
+    <!--<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <a href="#" class="btn btn-primary">Button</a>-->
+    <div class="group-protocols">
+      <h6>Momentos de educación a distancia</h6>
+      <p>{{ topic.summary }}</p>
+      <div class="btn-protocols">
+        <a class="badge badge-info"     [routerLink]="['protocolo/individual',topic.id]">Ir a Protocolo individual</a>
+        <a class="badge badge-primary"  [routerLink]="['protocolo/grupal',topic.id]">Ir a Protocolo grupal</a>
+        <a class="badge badge-success"  [routerLink]="['protocolo/tutorial',topic.id]">Ir a Protocolo tutorial</a>
+      </div>
+    </div>
+    
+    <!-- <div *ngIf="topic.modules.length > 0" class="group-resources">
+      <h6>Recursos</h6>
+      <ul class="group-resources-items">
+        <li *ngFor="let module of topic.modules">
+          <a [href]="module.url" target="_blank"><span><img class="img-module" [src]="module.modicon" alt="module.modname"></span>{{ module.name }}</a>
+        </li>
+      </ul>
+    </div> -->
+  </div>
+</div>

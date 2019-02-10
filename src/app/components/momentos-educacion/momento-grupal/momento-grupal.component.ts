@@ -9,6 +9,7 @@ export class MomentoGrupalComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }

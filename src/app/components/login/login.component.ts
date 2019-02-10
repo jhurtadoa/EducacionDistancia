@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import {Router} from "@angular/router";
+import { Router } from "@angular/router";
+import { Observable } from 'rxjs';
+
+//Services
+
+import { MoodleService } from "../../services/moodle.service";
 
 @Component({
   selector: 'app-login',
@@ -8,20 +13,48 @@ import {Router} from "@angular/router";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
-  constructor(private router:Router) { }
+  private user:string;
+  private userid:string;
+  constructor(private router:Router, private moodleService: MoodleService) { 
+    
+  }
 
   ngOnInit() {
   }
 
   public login(form: NgForm){
+
+    this.moodleService.getToken();
+
+    
+
     //if(form.value.txUser == users_list[0].nombre && 
     //   form.value.txPassword == users_list[0].password)
-    if(form.value.txUser != "" && form.value.txPassword != "")
+    let username = form.value.txUser;
+    if(username != "" && form.value.txPassword != "")
     {
-        sessionStorage.setItem('userlogin', form.value.txUser);
-        alert("Bienvenido "+ form.value.txUser);
-        this.router.navigate(['dashboard']);
+      debugger;
+      let user:any;
+      this.moodleService.getUsers("username", form.value.txUser )
+        .subscribe((res:any)=> { 
+          let user = res.users[0];
+          console.log(user, 'getUser');
+
+          debugger;
+          if (user !=null){
+            sessionStorage.setItem('userlogin', user.username);
+            sessionStorage.setItem('userid', user.id);
+            alert("Bienvenido/a "+ user.firstname);
+
+            this.router.navigate(['asignaturas']);
+          } 
+
+
+        });
+        
+        
+
+        
     }else{
         sessionStorage.setItem('userlogin', null);
         alert("Usuario o contraseña incorrecta");

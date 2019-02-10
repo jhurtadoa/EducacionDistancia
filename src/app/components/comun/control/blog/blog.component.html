@@ -1,0 +1,34 @@
+<div class="blog-container w-100">
+  <h5>Inquietudes</h5>
+  <ul class="list-posts w-100">
+    <li class="item-post w-80" *ngFor="let annotation of annotations" [attr.data-id]="annotation._id">
+      <div class="item-description-post">
+        <span class="btn-eliminar glyphicon glyphicon-trash" (click)="deleteAnnotation(annotation._id)" title="Eliminar"></span>
+        <span><span class="glyphicon glyphicon-star w-15" (click)="setStarsAnswerAnnotation(annotation)" aria-hidden="true"></span><sub>{{annotation.stars}}</sub></span>
+        <p>{{ annotation.description }}</p>
+        <sub *ngIf="annotation.answers.length > 0" (click)="annotation.answers.showanswers = !annotation.answers.showanswers">Respuestas: {{ annotation.answers.length }}</sub>
+        <sub *ngIf="annotation.answers.length == 0" (click)="annotation.answers.showanswers = !annotation.answers.showanswers">Responder</sub>
+      </div>
+      <div class="box-answer-post w-97" *ngIf="annotation.answers.showanswers">
+        <ul class="list-answers-post">
+          <li *ngFor="let answer of annotation.answers" class="item-answer-post">
+            <span class="w-60">{{ answer.description }}</span>
+            <div class="footer-answer-post">
+                <sub class="w-20" title="Fecha de creación {{ answer.datetimecreated | date}} {{ answer.datetimecreated | date:'shortTime'}}">{{ answer.datetimecreated | date }}</sub>
+                <sub class="w-20" title="Usuario de la respuesta">Usuario{{ answer.iduser }}</sub>
+            </div>
+          </li>
+        </ul>
+        
+          <textarea [(ngModel)]="newAnswerPost.description" name="new-answer-post" row="2" class="form-control new-answer-post w-80" style="resize: none !important" placeholder="Respuesta.."></textarea>
+          <input type="button" (click)="updateAnswerAnnotation(annotation)" class="btn btn-primary btn-xs btn-new-answer-post w-20" value="Agregar">
+      </div>
+    </li>
+  </ul>
+
+  <div class="btn-group-new-post">
+      <textarea [(ngModel)]=newAnnotation.description name="new-post" row="2" class="form-control new-post" style="resize: none !important" placeholder="Ingrese una nueva entrada.."></textarea>
+      <input type="button" (click)="createAnnotation()" class="btn btn-primary btn-new-post" value="Agregar">
+  </div>
+  
+</div>

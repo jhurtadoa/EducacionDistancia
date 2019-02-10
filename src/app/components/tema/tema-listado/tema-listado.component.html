@@ -1,3 +1,21 @@
-<p>
-  tema-listado works!
-</p>
+<h2>Listado de temas</h2>
+
+
+<nav class="navbar navbar-light bg-light w-12">
+    <form class="form-inline w-100" >
+        <input #buscarTexto class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search" (keyup)="buscar(buscarTexto.value)">
+        <button (click)="buscar(buscarTexto.value)" class="btn btn-outline-success my-2 my-sm-0" type="button">Buscar</button>
+    </form>
+</nav>
+
+
+<app-tema-resumen class="w-12" *ngFor="let topic of topics" [topic]=topic></app-tema-resumen>
+
+<div class="row" *ngIf="isloaded && topics.length == 0">
+    <div class="col-8">
+        <div class="alert alert-info" role="alert">
+            no existen temas.
+        </div>
+
+    </div>
+</div>

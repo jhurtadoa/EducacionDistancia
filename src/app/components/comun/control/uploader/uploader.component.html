@@ -1,0 +1,4 @@
+<div class="group-upload">
+    <input (change)="selectResource($event.target.files[0])" type="file" name="resource" style="margin-bottom: 10px; height: 40px;"  class="form-control"/>
+    <button id="btnSubir" (click)="uploadResource()" [disabled]="!resource"  class="btn btn-primary">Subir recurso</button>
+</div>

@@ -1,9 +1,9 @@
-<div class="card w-75">
+<div class="card w-100">
   <div class="card-body">
-    <h5 class="card-title"><a [routerLink]="['/asignatura',asignaturaId]">{{ asignatura }}</a></h5>
-    <!--<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-primary">Button</a>-->
-    <span class="tareasPendientes">Tareas Pendientes <span class="badge badge-primary">{{numeroTareasPendientes}}</span></span>
-    <span class="notificacionesPendientes">Notificaciones <span class="badge badge-primary">{{numeroNotificaciones}}</span></span>
+    <h5 class="card-title"><a [routerLink]="['/asignatura',asignaturaId]">{{ asignatura.fullname }}</a></h5>
+    <p class="card-text">{{ asignatura.summary }}</p>
+    <!-- <a href="#" class="btn btn-primary">Button</a>--> 
+    <!-- <span class="tareasPendientes">Tareas Pendientes <span class="badge badge-primary">2</span></span>
+    <span class="notificacionesPendientes">Notificaciones <span class="badge badge-primary">1</span></span> -->
   </div>
 </div>

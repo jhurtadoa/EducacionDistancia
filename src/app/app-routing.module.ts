@@ -10,6 +10,7 @@ import { AsignaturaDetalleComponent } from './components/asignatura/asignatura-d
 import { MomentoIndividualComponent } from './components/momentos-educacion/momento-individual/momento-individual.component';
 import { MomentoGrupalComponent } from './components/momentos-educacion/momento-grupal/momento-grupal.component';
 import { MomentoTutorialComponent } from './components/momentos-educacion/momento-tutorial/momento-tutorial.component';
+import { TemaListadoComponent } from './components/tema/tema-listado/tema-listado.component';
 
 
 const routes: Routes = [
@@ -26,10 +27,12 @@ const routes: Routes = [
     children: [
       { path: 'dashboard', component: DashboardComponent},
       { path: 'asignaturas', component: AsignaturaListadoComponent },
-      { path: 'asignatura/:id', component: AsignaturaDetalleComponent },
-      { path: 'momentoindividual', component: MomentoIndividualComponent },
-      { path: 'momentogrupal', component: MomentoGrupalComponent },
-      { path: 'momentotutorial', component: MomentoTutorialComponent },
+      { path: 'asignatura/:idcourse', component: AsignaturaDetalleComponent },
+      // { path: 'asignatura/:idcourse/temas', component: TemaListadoComponent },
+      // { path: 'asignatura/:idcourse/tema/:idtopic', component: TemaListadoComponent },
+      { path: 'asignatura/:idcourse/protocolo/individual/:idtopic', component: MomentoIndividualComponent },
+      { path: 'asignatura/:idcourse/protocolo/grupal/:idtopic', component: MomentoGrupalComponent },
+      { path: 'asignatura/:idcourse/protocolo/tutorial/:idtopic', component: MomentoTutorialComponent },
       
     ]
   }

@@ -1,3 +1,7 @@
 :host nav{
     z-index:999 !important;
 }
+
+.main-color{
+    background-color: #FFCA28 !important;
+}

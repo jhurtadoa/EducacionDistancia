@@ -1,3 +1,4 @@
-<p>
-  asignatura-detalle works!
-</p>
+<h1 *ngIf="isloaded_detalle">{{course.fullname}}</h1>
+
+<app-tema-listado *ngIf="course && isloaded_detalle"  [in_course]=course></app-tema-listado>
+<p *ngIf="!course && isloaded_detalle">No hay curso</p>

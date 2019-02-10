@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {Asignatura} from './../asignatura';
+import { MoodleService } from '../../../services/moodle.service';
+
 
 
 @Component({
@@ -8,17 +9,19 @@ import {Asignatura} from './../asignatura';
   styleUrls: ['./asignatura-resumen.component.css']
 })
 export class AsignaturaResumenComponent implements OnInit {
-  @Input() asignaturaId:number;
+  @Input() asignaturaId:string;
   @Input() asignatura:string;
   @Input() numeroTareasPendientes:number;
   @Input() numeroNotificaciones:number;
   
-  constructor() { 
+  constructor(private moodleService:MoodleService) { 
       
   }
 
   ngOnInit() {
-      
+      this.moodleService.getCoursesList(this.asignaturaId).subscribe( (res:any) => {
+        this.asignatura = res[0];
+      });
   }
 
 }
